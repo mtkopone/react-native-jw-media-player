@@ -179,8 +179,8 @@ declare module "react-native-jw-media-player" {
     onBeforeComplete?: (event: any) => void;
     onPlay?: (event: any) => void;
     onPause?: (event: any) => void;
-    onSetupPlayerError?: (setupPlayerError: { error: string }) => void;
-    onPlayerError?: (playerError: { error: string }) => void;
+    onSetupPlayerError?: (setupPlayerError: { nativeEvent: { error: string } }) => void
+    onPlayerError?: (playerError: { nativeEvent: { error: string } }) => void
     onBuffer?: (event: any) => void;
     onTime?: (event: any) => void;
     onComplete?: (event: any) => void;
