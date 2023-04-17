@@ -676,4 +676,17 @@
     [super jwplayer:player updatedCaptionList:options];
 }
 
+#pragma mark - JWProgramDateTimeMetadataDelegate
+
+- (void)jwplayer:(id<JWPlayer> _Nonnull)player programDateTimeMetadata:(JWProgramDateTimeMetadata * _Nonnull)metadata {
+    [super jwplayer:player programDateTimeMetadata:metadata];
+    if (_parentView.onProgramDateTime) {
+        _parentView.onProgramDateTime(@{@"start": @(metadata.start), @"end": @(metadata.end), @"programDateTime": @((long)(1000 * metadata.programDateTime.timeIntervalSince1970))});
+    }
+}
+
+- (void)jwplayer:(id<JWPlayer> _Nonnull)player programDateTimeMetadataCueParsed:(JWProgramDateTimeMetadata * _Nonnull)metadata {
+    [super jwplayer:player programDateTimeMetadataCueParsed:metadata];
+}
+
 @end

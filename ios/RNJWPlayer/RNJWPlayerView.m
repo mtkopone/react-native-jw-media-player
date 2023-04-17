@@ -758,7 +758,8 @@
     _playerView.player.adDelegate = self;
     _playerView.player.avDelegate = self;
     _playerView.player.contentKeyDataSource = self;
-    
+    _playerView.player.metadataDelegates.programDateTimeMetadataDelegate = self;
+
     [_playerView.player configurePlayerWith:playerConfig];
 
     if (_pipEnabled) {
@@ -870,7 +871,6 @@
         self.onPlayerAdWarning(@{@"warning": message});
     }
 }
-
 
 #pragma mark - JWPlayer View Delegate
 
@@ -1730,5 +1730,15 @@
       }
   }
 }
+
+#pragma mark - JWProgramDateTimeMetadataDelegate
+
+- (void)jwplayer:(id<JWPlayer>)player programDateTimeMetadata:(JWProgramDateTimeMetadata * _Nonnull)metadata {
+    if (self.onProgramDateTime) {
+        self.onProgramDateTime(@{@"start": @(metadata.start), @"end": @(metadata.end), @"programDateTime": @((long)(1000 * metadata.programDateTime.timeIntervalSince1970))});
+    }
+}
+
+- (void)jwplayer:(id <JWPlayer> _Nonnull)player programDateTimeMetadataCueParsed:(JWProgramDateTimeMetadata * _Nonnull)metadata {}
 
 @end

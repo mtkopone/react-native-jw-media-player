@@ -20,6 +20,7 @@ RCT_EXPORT_MODULE()
 
 /* player state events */
 RCT_EXPORT_VIEW_PROPERTY(onTime, RCTBubblingEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onProgramDateTime, RCTBubblingEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onLoaded, RCTBubblingEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onSeek, RCTBubblingEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onSeeked, RCTBubblingEventBlock);

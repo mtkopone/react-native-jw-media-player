@@ -230,6 +230,7 @@ export default class JWPlayer extends Component {
 		onPlayerError: PropTypes.func,
 		onBuffer: PropTypes.func,
 		onTime: PropTypes.func,
+		onProgramDateTime: PropTypes.func,
 		onComplete: PropTypes.func,
 		onFullScreenRequested: PropTypes.func,
 		onFullScreen: PropTypes.func,

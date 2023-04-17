@@ -12,7 +12,7 @@
 
 @class RNJWPlayerViewController;
 
-@interface RNJWPlayerView : UIView  <JWPlayerDelegate, JWPlayerStateDelegate, JWAdDelegate, JWCastDelegate, JWAVDelegate, JWPlayerViewDelegate, JWPlayerViewControllerDelegate, JWDRMContentKeyDataSource, AVPictureInPictureControllerDelegate>
+@interface RNJWPlayerView : UIView  <JWPlayerDelegate, JWPlayerStateDelegate, JWAdDelegate, JWCastDelegate, JWAVDelegate, JWPlayerViewDelegate, JWPlayerViewControllerDelegate, JWDRMContentKeyDataSource, AVPictureInPictureControllerDelegate, JWProgramDateTimeMetadataDelegate>
 
 @property(nonatomic, strong)RNJWPlayerViewController* playerViewController;
 @property(nonatomic, strong)JWPlayerView *playerView;
@@ -49,6 +49,7 @@
 @property(nonatomic, copy)RCTBubblingEventBlock onLoaded;
 @property(nonatomic, copy)RCTBubblingEventBlock onVisible;
 @property(nonatomic, copy)RCTBubblingEventBlock onTime;
+@property(nonatomic, copy)RCTBubblingEventBlock onProgramDateTime;
 @property(nonatomic, copy)RCTBubblingEventBlock onSeek;
 @property(nonatomic, copy)RCTBubblingEventBlock onSeeked;
 @property(nonatomic, copy)RCTBubblingEventBlock onPlaylist;
